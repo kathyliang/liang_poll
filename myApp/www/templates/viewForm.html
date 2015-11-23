@@ -1,0 +1,14 @@
+<ion-view view-title="view Form">
+	
+	<div class="content has-header">
+		<ul class="list">
+		<div class="item item-button-right" ng-repeat="(id,form) in vc.lo_form_amount">
+		    {{id+1}}.   {{form.title}}
+		    <button class="button button-positive" ng-click="vc.view(form)">
+		      <i class="ion-arrow-right-c"></i>
+		      
+		    </button>
+		  </div>
+		</ul>
+	</div>
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-view view-title="preview" >
+  
+  <div class="content has-header">
+
+	<ul class="list">
+
+	  
+	  <li class="item">
+	  Title: {{pre.lo_info.title}}
+	  </li>
+	  <li class="item">
+	  Description: {{pre.lo_info.des}}
+	  </ul>
+	  <div class="list card" ng-repeat="(id,question) in pre.lo_info.questions" >
+	  	
+	 		 Question{{id+1}}: {{question.qes}}
+	 		 <li ng-repeat="(id,option) in question.options" class="item item-divider">
+				Option{{id+1}}: {{option.name}} 
+			</li>
+	 	
+	  </div>
+	  
+	  <button class="button button-block button-outline button-assertive" ng-click="pre.submit()">
+		Submit 
+	  </button>
+	
+
+  </div>
+
+</ion-view>
+		
+		
+

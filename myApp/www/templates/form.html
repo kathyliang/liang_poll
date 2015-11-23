@@ -1,0 +1,57 @@
+<ion-view view-title="Form" >
+  	
+  	<ion-nav-buttons side="right">
+       <!-- <button class="button" ng-click="doSomething()">
+         I'm a button on the primary of the navbar!
+       </button> -->
+       	  <a class="button button-clear"  ng-click="fc.share()">
+             <i class="icon ion-share"></i>
+             
+             <!-- Share -->
+           </a>
+    </ion-nav-buttons>
+
+  <div class="content has-header">
+  	<!-- <button class="button">Edit</button> -->
+  	<!-- <div class="bar bar-header">
+  	  <button class="button icon ion-navicon"></button>
+  	  <h1 class="title">Header Buttons</h1>
+  	  <button class="button">Edit</button>
+  	</div> -->
+	<ul class="list">
+
+	  
+		<li class="item">
+		  Title: {{fc.lo_form.title}}
+		</li>
+		<li class="item">
+		  Description: {{fc.lo_form.des}}
+		</li> 
+		<!-- {{fc.lo_form}} -->
+		<li  class="item " ng-repeat="(id,question) in fc.lo_form.questions">
+			Question{{id+1}}: {{question.qes}}
+			
+		<ul class="list">
+
+		  	<li class="item item-checkbox" ng-repeat="(id,option) in question.options">
+		    	<label class="checkbox">
+		    		<input type="checkbox"ng-model="option.checked">
+		     	</label>
+		     	Option{{id+1}}: {{option.name}} 
+		  	</li>
+		</ul>
+	</ul>
+
+	 <button class="button button-block button-outline button-assertive" ng-click="fc.count()">
+		Submit 
+	  </button>
+	  <!-- <button class="button button-block button-outline button-assertive" ng-click="fc.show()">
+		Show results
+	  </button>
+	   -->
+
+	
+
+  </div>
+
+</ion-view>

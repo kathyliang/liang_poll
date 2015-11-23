@@ -1,0 +1,87 @@
+<ion-view view-title="poll">
+
+	<div class="bar bar-header bar-calm">
+	  	<h1 class="title">bar-calm</h1>
+	</div>
+		
+	<ion-content class="padding" delegate-handle="poll_content">
+		<div class="list card">
+		  
+			<label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.title" placeholder="Untitled form">
+			</label>
+
+			<label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.des" placeholder="Form description">
+			</label>
+		</div>	
+
+		<div ng-repeat="(id,question) in pc.lo_info.questions" class="list card">
+			
+			<div class="item item-divider item-button-right" style="height: 53px;">
+			  Question {{id + 1}}
+			  	<button class="button  button-small  button-positive" ng-click="pc.add_option(id)">
+			 		add_option
+				</button>
+			</div>
+
+			<label class="item item-input">
+				<input type="text" ng-model="question.qes" placeholder="Question {{id + 1}}">
+			</label>
+
+			<label class="item item-input" ng-repeat="(id,option) in question.options">
+				<input type="text" ng-model="option.name" placeholder="Option{{id + 1}}">
+			</label>
+
+			<!-- <div ng-repeat="(id,form) in forms" ng-click="pc.preview(id)">
+			</div> -->
+			
+
+		</div>
+			<button class="button button-block button-outline button-calm" ng-click="pc.add_question()">
+				 add_question
+			</button>
+			<button class="button button-block button-outline button-balanced" ng-click="pc.preview()">
+				 preview
+			</button>
+
+	</ion-content>
+</ion-view>
+
+
+
+
+
+
+
+			
+
+
+
+			<!-- <label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.question1" placeholder="Question Title">
+			</label>
+			<label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.option1_1" placeholder="Option1">
+			</label>
+			<label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.option2_1" placeholder="Option2">
+			</label>
+			<label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.question2" placeholder="Question Title">
+			</label>
+			<label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.option1_2" placeholder="Option1">
+			</label>
+			<label class="item item-input">
+				<input type="text" ng-model="pc.lo_info.option2_2" placeholder="Option2">
+			</label>-->
+			<!-- <button class="button button-block button-positive" ng-click="pc.get()" >
+				get
+			</button>	
+			 -->
+
+
+
+	
+
